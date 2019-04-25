@@ -1,0 +1,7 @@
+D:\BIAutoSalon\BIAutosalon\AutosalonTabular\bin\Model.asdatabase
+D:\BIAutoSalon\BIAutosalon\AutosalonTabular\bin\Model.deploymenttargets
+D:\BIAutoSalon\BIAutosalon\AutosalonTabular\bin\Model.deploymentoptions
+D:\BIAutoSalon\BIAutosalon\AutosalonTabular\obj\Development\AutosalonTabular.smproj.CoreCompileInputs.cache
+D:\BIAutoSalon\BIAutosalon\AutosalonTabular\obj\Development\Model.asdatabase
+D:\BIAutoSalon\BIAutosalon\AutosalonTabular\obj\Development\Model.deploymentoptions
+D:\BIAutoSalon\BIAutosalon\AutosalonTabular\obj\Development\Model.deploymenttargets

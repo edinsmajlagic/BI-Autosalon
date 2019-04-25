@@ -1,0 +1,472 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/16/2017 6:17:00 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HUMA"
+  DTS:CreatorName="AzureAD\AmarHumačkić"
+  DTS:DTSID="{8A4244D4-D89C-40FF-89B8-9EB6F7CAB60F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.0800.98"
+  DTS:LocaleID="5146"
+  DTS:ObjectName="DimKarakteristike_Load"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{60DEA19F-285A-4FD8-91D2-D98ADD8F11F2}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\punjenje tabele DimKarakteristike"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{84D82DD7-102A-4E83-B55F-755C867498CB}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="punjenje tabele DimKarakteristike"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\punjenje tabele DimKarakteristike\Destination - DimKarakteristike"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination - DimKarakteristike"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimKarakteristike]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\punjenje tabele DimKarakteristike\Destination - DimKarakteristike.Connections[OleDbConnection]"
+                  connectionManagerID="{1DC700BA-7431-4A21-9D20-33DC6C094DDD}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.AutoSalonDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\punjenje tabele DimKarakteristike\Destination - DimKarakteristike.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\punjenje tabele DimKarakteristike\Destination - DimKarakteristike.Inputs[OLE DB Destination Input].Columns[Boja]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="Boja"
+                      externalMetadataColumnId="Package\punjenje tabele DimKarakteristike\Destination - DimKarakteristike.Inputs[OLE DB Destination Input].ExternalColumns[Boja]"
+                      lineageId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Output].Columns[Boja]" />
+                    <inputColumn
+                      refId="Package\punjenje tabele DimKarakteristike\Destination - DimKarakteristike.Inputs[OLE DB Destination Input].Columns[Gorivo]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Gorivo"
+                      externalMetadataColumnId="Package\punjenje tabele DimKarakteristike\Destination - DimKarakteristike.Inputs[OLE DB Destination Input].ExternalColumns[Gorivo]"
+                      lineageId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Output].Columns[Gorivo]" />
+                    <inputColumn
+                      refId="Package\punjenje tabele DimKarakteristike\Destination - DimKarakteristike.Inputs[OLE DB Destination Input].Columns[Transmisija]"
+                      cachedDataType="wstr"
+                      cachedLength="16"
+                      cachedName="Transmisija"
+                      externalMetadataColumnId="Package\punjenje tabele DimKarakteristike\Destination - DimKarakteristike.Inputs[OLE DB Destination Input].ExternalColumns[Transmisija]"
+                      lineageId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Output].Columns[Transmisija]" />
+                    <inputColumn
+                      refId="Package\punjenje tabele DimKarakteristike\Destination - DimKarakteristike.Inputs[OLE DB Destination Input].Columns[KarakteristikeID]"
+                      cachedDataType="i4"
+                      cachedName="KarakteristikeID"
+                      externalMetadataColumnId="Package\punjenje tabele DimKarakteristike\Destination - DimKarakteristike.Inputs[OLE DB Destination Input].ExternalColumns[KarakteristikeAltKey]"
+                      lineageId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Output].Columns[KarakteristikeID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\punjenje tabele DimKarakteristike\Destination - DimKarakteristike.Inputs[OLE DB Destination Input].ExternalColumns[KarakteristikeKey]"
+                      dataType="i4"
+                      name="KarakteristikeKey" />
+                    <externalMetadataColumn
+                      refId="Package\punjenje tabele DimKarakteristike\Destination - DimKarakteristike.Inputs[OLE DB Destination Input].ExternalColumns[KarakteristikeAltKey]"
+                      dataType="i4"
+                      name="KarakteristikeAltKey" />
+                    <externalMetadataColumn
+                      refId="Package\punjenje tabele DimKarakteristike\Destination - DimKarakteristike.Inputs[OLE DB Destination Input].ExternalColumns[Boja]"
+                      dataType="wstr"
+                      length="30"
+                      name="Boja" />
+                    <externalMetadataColumn
+                      refId="Package\punjenje tabele DimKarakteristike\Destination - DimKarakteristike.Inputs[OLE DB Destination Input].ExternalColumns[Gorivo]"
+                      dataType="wstr"
+                      length="15"
+                      name="Gorivo" />
+                    <externalMetadataColumn
+                      refId="Package\punjenje tabele DimKarakteristike\Destination - DimKarakteristike.Inputs[OLE DB Destination Input].ExternalColumns[Transmisija]"
+                      dataType="wstr"
+                      length="16"
+                      name="Transmisija" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\punjenje tabele DimKarakteristike\Destination - DimKarakteristike.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\punjenje tabele DimKarakteristike\Destination - DimKarakteristike.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\punjenje tabele DimKarakteristike\Destination - DimKarakteristike.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\punjenje tabele DimKarakteristike\Destination - DimKarakteristike.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\punjenje tabele DimKarakteristike\Destination - DimKarakteristike.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\punjenje tabele DimKarakteristike\Destination - DimKarakteristike.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Source - Karakteristike"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Karakteristike]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Connections[OleDbConnection]"
+                  connectionManagerID="{9BB17023-A4F6-4298-8EDA-C9CA9AF5FE96}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.AutosalonFarik]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Output].Columns[KarakteristikeID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Output].ExternalColumns[KarakteristikeID]"
+                      lineageId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Output].Columns[KarakteristikeID]"
+                      name="KarakteristikeID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Output].Columns[Boja]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Output].ExternalColumns[Boja]"
+                      length="30"
+                      lineageId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Output].Columns[Boja]"
+                      name="Boja"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Output].Columns[Gorivo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Output].ExternalColumns[Gorivo]"
+                      length="15"
+                      lineageId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Output].Columns[Gorivo]"
+                      name="Gorivo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Output].Columns[Transmisija]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Output].ExternalColumns[Transmisija]"
+                      length="16"
+                      lineageId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Output].Columns[Transmisija]"
+                      name="Transmisija"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Output].ExternalColumns[KarakteristikeID]"
+                      dataType="i4"
+                      name="KarakteristikeID" />
+                    <externalMetadataColumn
+                      refId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Output].ExternalColumns[Boja]"
+                      dataType="wstr"
+                      length="30"
+                      name="Boja" />
+                    <externalMetadataColumn
+                      refId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Output].ExternalColumns[Gorivo]"
+                      dataType="wstr"
+                      length="15"
+                      name="Gorivo" />
+                    <externalMetadataColumn
+                      refId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Output].ExternalColumns[Transmisija]"
+                      dataType="wstr"
+                      length="16"
+                      name="Transmisija" />
+                    <externalMetadataColumn
+                      refId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Output].ExternalColumns[DodatnaOprema]"
+                      dataType="nText"
+                      name="DodatnaOprema" />
+                    <externalMetadataColumn
+                      refId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Output].ExternalColumns[AutaID]"
+                      dataType="i4"
+                      name="AutaID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Error Output].Columns[KarakteristikeID]"
+                      dataType="i4"
+                      lineageId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Error Output].Columns[KarakteristikeID]"
+                      name="KarakteristikeID" />
+                    <outputColumn
+                      refId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Error Output].Columns[Boja]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Error Output].Columns[Boja]"
+                      name="Boja" />
+                    <outputColumn
+                      refId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Error Output].Columns[Gorivo]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Error Output].Columns[Gorivo]"
+                      name="Gorivo" />
+                    <outputColumn
+                      refId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Error Output].Columns[Transmisija]"
+                      dataType="wstr"
+                      length="16"
+                      lineageId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Error Output].Columns[Transmisija]"
+                      name="Transmisija" />
+                    <outputColumn
+                      refId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\punjenje tabele DimKarakteristike.Paths[OLE DB Source Output]"
+              endId="Package\punjenje tabele DimKarakteristike\Destination - DimKarakteristike.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\punjenje tabele DimKarakteristike\Source - Karakteristike.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="238,42"
+          Id="Package\punjenje tabele DimKarakteristike"
+          TopLeft="326,49" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\punjenje tabele DimKarakteristike">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="225.333333333334,42"
+          Id="Package\punjenje tabele DimKarakteristike\Destination - DimKarakteristike"
+          TopLeft="380,121" />
+        <NodeLayout
+          Size="185.333333333334,42"
+          Id="Package\punjenje tabele DimKarakteristike\Source - Karakteristike"
+          TopLeft="383,21" />
+        <EdgeLayout
+          Id="Package\punjenje tabele DimKarakteristike.Paths[OLE DB Source Output]"
+          TopLeft="475.5,63">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="17,58"
+              Start="0,0"
+              End="17,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25"
+                    Point2="0,29"
+                    Point3="4,29" />
+                  <mssgle:LineSegment
+                    End="13,29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13,29"
+                    Point2="17,29"
+                    Point3="17,33" />
+                  <mssgle:LineSegment
+                    End="17,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\punjenje tabele DimKarakteristike\Destination - DimKarakteristike">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\punjenje tabele DimKarakteristike\Source - Karakteristike">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

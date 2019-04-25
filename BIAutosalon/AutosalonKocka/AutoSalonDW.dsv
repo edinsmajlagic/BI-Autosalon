@@ -1,0 +1,209 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="52bb632d-af28-4023-aeae-b8700ed9c624" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>AutoSalonDW</ID>
+  <Name>AutoSalonDW</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>AutoSalonDW</DataSourceID>
+  <Schema>
+    <xs:schema id="AutoSalonDW" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="AutoSalonDW" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="9e32d576-c150-406e-95c0-a22483c8b281">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_DimAuta" msprop:design-time-name="3ec657a9-f9b7-4b76-bcf3-22139a65e4de" msprop:DbTableName="DimAuta" msprop:FriendlyName="DimAuta" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="AutaKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="d8e067b6-498a-44c5-a992-e88765c3e65e" msprop:DbColumnName="AutaKey" msprop:FriendlyName="AutaKey" type="xs:int" />
+                  <xs:element name="AutaAltKey" msprop:design-time-name="ae6c2bc3-4a77-4f8a-874f-1018fd97834e" msprop:DbColumnName="AutaAltKey" msprop:FriendlyName="AutaAltKey" type="xs:int" />
+                  <xs:element name="Stanje" msprop:design-time-name="777668ea-4021-49d5-9bf9-378fbd7e1588" msprop:DbColumnName="Stanje" msprop:FriendlyName="Stanje">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="9" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Motor" msprop:design-time-name="e3f7ee68-ebcb-4307-82f8-a06e1a9f749e" msprop:DbColumnName="Motor" msprop:FriendlyName="Motor">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="9" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="NazivModela" msprop:design-time-name="39be432c-57e5-4b66-bbe8-e8736df456d4" msprop:DbColumnName="NazivModela" msprop:FriendlyName="NazivModela">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="15" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ImeProizvodjaca" msprop:design-time-name="7e9b3f20-64bc-4740-b347-babe726d3cee" msprop:DbColumnName="ImeProizvodjaca" msprop:FriendlyName="ImeProizvodjaca">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimKarakteristike" msprop:design-time-name="73b24673-c7a1-4291-9006-2118738f24c0" msprop:DbTableName="DimKarakteristike" msprop:FriendlyName="DimKarakteristike" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="KarakteristikeKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="adc83441-f0d9-40bd-84c0-57e8b7733c81" msprop:DbColumnName="KarakteristikeKey" msprop:FriendlyName="KarakteristikeKey" type="xs:int" />
+                  <xs:element name="KarakteristikeAltKey" msprop:design-time-name="ff89be96-06f2-4dfd-ae5c-74eb443001e8" msprop:DbColumnName="KarakteristikeAltKey" msprop:FriendlyName="KarakteristikeAltKey" type="xs:int" />
+                  <xs:element name="Boja" msprop:design-time-name="c30f2be8-fe2c-4137-a7de-2213a77b786d" msprop:DbColumnName="Boja" msprop:FriendlyName="Boja">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="30" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Gorivo" msprop:design-time-name="838a9063-6c06-4cfe-92b6-36a213744691" msprop:DbColumnName="Gorivo" msprop:FriendlyName="Gorivo">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="15" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Transmisija" msprop:design-time-name="493ec92e-bd1c-4d5d-b33f-a2a605226f8a" msprop:DbColumnName="Transmisija" msprop:FriendlyName="Transmisija">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="16" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimLokacija" msprop:design-time-name="e881b51b-2f68-4c09-9734-d92e71eba620" msprop:DbTableName="DimLokacija" msprop:FriendlyName="DimLokacija" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="LokacijaKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="427025b9-db6a-4690-b42d-792ecd5ce89e" msprop:DbColumnName="LokacijaKey" msprop:FriendlyName="LokacijaKey" type="xs:int" />
+                  <xs:element name="LokacijaAltKey" msprop:design-time-name="2f76d43f-1074-4f0b-8e8b-dd33bf93eac8" msprop:DbColumnName="LokacijaAltKey" msprop:FriendlyName="LokacijaAltKey" type="xs:int" />
+                  <xs:element name="Grad" msprop:design-time-name="03effd31-132f-4f54-a4bb-89f31a0a3523" msprop:DbColumnName="Grad" msprop:FriendlyName="Grad">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Drzava" msprop:design-time-name="552eeb5a-0138-4e35-9745-e0b366956bda" msprop:DbColumnName="Drzava" msprop:FriendlyName="Drzava">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="30" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimSpol" msprop:design-time-name="6a898f2e-702d-4f48-9bd3-230bc1a66e60" msprop:DbTableName="DimSpol" msprop:FriendlyName="DimSpol" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="SpolKey" msprop:design-time-name="41d08229-bf3a-4cf4-b071-deeec30a75d6" msprop:DbColumnName="SpolKey" msprop:FriendlyName="SpolKey">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_FactBrojProdanih" msprop:design-time-name="cffc4bf8-3985-497b-aca1-4af1edec2c3d" msprop:DbTableName="FactBrojProdanih" msprop:FriendlyName="FactBrojProdanih" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="BrojProdanihKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="6aadba60-c524-40bf-b589-6ad18f43ce51" msprop:DbColumnName="BrojProdanihKey" msprop:FriendlyName="BrojProdanihKey" type="xs:int" />
+                  <xs:element name="SpolKey" msprop:design-time-name="caf5daa0-7476-48de-b60c-3de533bd340c" msprop:DbColumnName="SpolKey" msprop:FriendlyName="SpolKey" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="LokacijaKey" msprop:design-time-name="9428773f-1a21-4a35-a1cb-90a2a36d453d" msprop:DbColumnName="LokacijaKey" msprop:FriendlyName="LokacijaKey" type="xs:int" minOccurs="0" />
+                  <xs:element name="AutaKey" msprop:design-time-name="faaa6a9d-faeb-47ae-bbd5-c77942b6bedd" msprop:DbColumnName="AutaKey" msprop:FriendlyName="AutaKey" type="xs:int" minOccurs="0" />
+                  <xs:element name="KarakteristikeKey" msprop:design-time-name="7a2ab706-3d20-4855-ba22-224c0e7cc5c1" msprop:DbColumnName="KarakteristikeKey" msprop:FriendlyName="KarakteristikeKey" type="xs:int" minOccurs="0" />
+                  <xs:element name="BrojProdanih" msprop:design-time-name="c4dd92bb-18a1-419a-a7dc-8be8518b9730" msprop:DbColumnName="BrojProdanih" msprop:FriendlyName="BrojProdanih" type="xs:int" />
+                  <xs:element name="UkupnaZarada" msprop:design-time-name="673820e7-2db1-4df6-ad11-ab2154d46204" msprop:DbColumnName="UkupnaZarada" msprop:FriendlyName="UkupnaZarada" type="xs:decimal" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimAuta" />
+          <xs:field xpath="AutaKey" />
+        </xs:unique>
+        <xs:unique name="dbo_DimKarakteristike_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimKarakteristike" />
+          <xs:field xpath="KarakteristikeKey" />
+        </xs:unique>
+        <xs:unique name="dbo_DimLokacija_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimLokacija" />
+          <xs:field xpath="LokacijaKey" />
+        </xs:unique>
+        <xs:unique name="dbo_DimSpol_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimSpol" />
+          <xs:field xpath="SpolKey" />
+        </xs:unique>
+        <xs:unique name="dbo_FactBrojProdanih_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_FactBrojProdanih" />
+          <xs:field xpath="BrojProdanihKey" />
+        </xs:unique>
+        <xs:keyref name="FK_BrojProdanih_Spol" refer="dbo_DimSpol_Constraint1">
+          <xs:selector xpath=".//dbo_FactBrojProdanih" />
+          <xs:field xpath="SpolKey" />
+        </xs:keyref>
+        <xs:keyref name="FK_BrojProdanih_Karakteristike" refer="dbo_DimKarakteristike_Constraint1">
+          <xs:selector xpath=".//dbo_FactBrojProdanih" />
+          <xs:field xpath="KarakteristikeKey" />
+        </xs:keyref>
+        <xs:keyref name="FK_BrojProdanih_Lokacija" refer="dbo_DimLokacija_Constraint1">
+          <xs:selector xpath=".//dbo_FactBrojProdanih" />
+          <xs:field xpath="LokacijaKey" />
+        </xs:keyref>
+        <xs:keyref name="FK_BrojProdanih_Auta" refer="Constraint1">
+          <xs:selector xpath=".//dbo_FactBrojProdanih" />
+          <xs:field xpath="AutaKey" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <AutoSalonDW xmlns="" />
+  </Schema>
+</DataSourceView>
